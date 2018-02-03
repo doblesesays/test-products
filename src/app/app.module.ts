@@ -9,16 +9,20 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 //import de componentes dedicados a la aplicación
 import {SigninScreenComponent} from './auth/signin-screen.component';
 import {SignupScreenComponent} from './auth/signup-screen.component';
+import { ProductsScreenComponent } from "./products/products-screen.component";
+import { Routing } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
     SigninScreenComponent,
-    SignupScreenComponent
+    SignupScreenComponent,
+    ProductsScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import {SignupScreenComponent} from './auth/signup-screen.component';
     MatInputModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Routing,
+    MatIconModule
 
   ],
   providers: [],

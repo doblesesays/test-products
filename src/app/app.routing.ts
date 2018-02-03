@@ -1,13 +1,14 @@
 import { Routes, RouterModule } from "@angular/router";
 import { SigninScreenComponent } from "./auth/signin-screen.component";
 import { SignupScreenComponent } from "./auth/signup-screen.component";
+import { ProductsScreenComponent } from "./products/products-screen.component";
 
 const APP_ROUTES: Routes = [
-    /*{
+    {
         path: '',
-        component: el componente de los productos,
+        component: ProductsScreenComponent,
         pathMatch: 'full'
-    },*/
+    },
     {
         path: 'signin',
         component: SigninScreenComponent
@@ -17,3 +18,5 @@ const APP_ROUTES: Routes = [
         component: SignupScreenComponent
     }
 ];
+
+export const Routing = RouterModule.forRoot(APP_ROUTES);

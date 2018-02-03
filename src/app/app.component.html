@@ -1,8 +1,9 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Test Products SignIn</span>
+    <span [routerLink]="['/']" style="cursor: pointer">Test Products SignIn</span>
+    <span class="spacer"></span>
+    <mat-icon [routerLink]="['/signin']" class="icon" style="cursor: pointer">account_circle</mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<!-- <app-signin-screen></app-signin-screen> -->
-<app-signup-screen></app-signup-screen>
+<router-outlet></router-outlet>
