@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { HttpModule } from "@angular/http";
 
 //material imports
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -16,14 +17,13 @@ import {SigninScreenComponent} from './auth/signin-screen.component';
 import {SignupScreenComponent} from './auth/signup-screen.component';
 import { ProductsScreenComponent } from "./products/products-screen.component";
 import { Routing } from './app.routing';
-import { Sessions } from "./auth/user.model";
 
 @NgModule({
   declarations: [
     AppComponent,
     SigninScreenComponent,
     SignupScreenComponent,
-    ProductsScreenComponent
+    ProductsScreenComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +38,7 @@ import { Sessions } from "./auth/user.model";
     ReactiveFormsModule,
     Routing,
     MatIconModule,
+    HttpModule
 
   ],
   providers: [],

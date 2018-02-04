@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { User } from './user.model';
+import { User, Sessions } from './user.model';
 
 @Component({
   selector: 'app-signup-screen',
@@ -9,6 +9,8 @@ import { User } from './user.model';
 export class SignupScreenComponent implements OnInit {
 
   signupForm: FormGroup;
+
+  constructor(private sessions: Sessions) {}
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -24,7 +26,8 @@ export class SignupScreenComponent implements OnInit {
     if (this.signupForm.valid) {
       const { username, password } = this.signupForm.value;
       const user = new User(username, password);
-      console.log(user);
+      this.sessions.addSession(user);
+      console.log(this.sessions);
     }
   }
 

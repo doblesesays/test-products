@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { User } from './user.model';
+import { User, Sessions } from './user.model';
+import { Routing } from '../app.routing';
+import { Router } from "@angular/router";
 
 @Component ({
     selector: 'app-signin-screen',
@@ -9,6 +11,8 @@ import { User } from './user.model';
 
 export class SigninScreenComponent implements OnInit {
     signinForm: FormGroup;
+
+    constructor(private sessions: Sessions, private router: Router){}
 
     ngOnInit () {
         this.signinForm = new FormGroup({
@@ -26,7 +30,11 @@ export class SigninScreenComponent implements OnInit {
         if (this.signinForm.valid) {
             const { username, password } = this.signinForm.value;
             const user = new User(username, password);
-            console.log(user);
+            if(this.sessions.exist(user)){
+                this.router.navigate(['/']);
+            } else {
+                this.router.navigate(['signin']);
+            }
         }
     }
 }
