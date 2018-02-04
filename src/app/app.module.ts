@@ -16,6 +16,7 @@ import {SigninScreenComponent} from './auth/signin-screen.component';
 import {SignupScreenComponent} from './auth/signup-screen.component';
 import { ProductsScreenComponent } from "./products/products-screen.component";
 import { Routing } from './app.routing';
+import { Sessions } from "./auth/user.model";
 
 @NgModule({
   declarations: [
@@ -36,10 +37,10 @@ import { Routing } from './app.routing';
     FormsModule,
     ReactiveFormsModule,
     Routing,
-    MatIconModule
+    MatIconModule,
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
