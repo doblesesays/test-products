@@ -11,6 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 //import de componentes dedicados a la aplicación
 import {SigninScreenComponent} from './auth/signin-screen.component';
@@ -38,8 +39,8 @@ import { Routing } from './app.routing';
     ReactiveFormsModule,
     Routing,
     MatIconModule,
-    HttpModule
-
+    HttpModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
