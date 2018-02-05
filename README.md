@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Note
 
-The sessions created (signup) are dynamic (array <User>).
+The sessions created (signup) are dynamic (array of users).
