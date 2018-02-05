@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 
 export class SigninScreenComponent implements OnInit {
     signinForm: FormGroup;
+    currentSession: User;
 
     constructor(private sessions: Sessions, private router: Router){}
 
@@ -31,6 +32,7 @@ export class SigninScreenComponent implements OnInit {
             const { username, password } = this.signinForm.value;
             const user = new User(username, password);
             if(this.sessions.exist(user)){
+                this.sessions.setCurrentSession(user);
                 this.router.navigate(['/']);
             } else {
                 this.router.navigate(['signin']);

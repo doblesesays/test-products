@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { Sessions } from '../auth/user.model';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-products-screen',
@@ -8,17 +10,17 @@ import { Http } from '@angular/http';
 })
 export class ProductsScreenComponent {
   products = [];
-  data = [];
 
-  constructor(private http: Http) {
-    this.http.get('assets/products.json')
-      .subscribe(res => {
-        this.data = res.json();
-        
-        for (var x in this.data) {
-          this.data.hasOwnProperty(x) && this.products.push(this.data[x])
-        }
-        console.log(this.products.pop);
-      });
+  constructor(private http: Http, private sessions: Sessions, private router: Router) {
+    console.log(this.sessions.getCurrentSession());
+    if (this.sessions.existCurrentSession()) {
+      this.http.get('assets/products.json')
+        .subscribe(res => {
+          this.products = res.json();
+          console.log(this.products);
+        });
+    } else {
+      this.router.navigate(['signin']);
+    }
   }
 }

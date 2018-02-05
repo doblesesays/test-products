@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Sessions } from './auth/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,5 @@ import { Sessions } from './auth/user.model';
 })
 export class AppComponent {
   title = 'app';
+  constructor(private sessions: Sessions, private router: Router){}
 }

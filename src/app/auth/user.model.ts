@@ -21,10 +21,7 @@ export class User {
 export class Sessions {
 
     private sessions: Array<User> = [];
-    
-    constructor() {
-        this.sessions.push(new User('doblesesays', 'dddddddd'));
-    }
+    private currentSession: User;
 
     public getSessions() {
         return this.sessions;
@@ -42,5 +39,25 @@ export class Sessions {
             }
         })
         return back;
+    }
+
+    public setCurrentSession(user: User) {
+        this.currentSession = user;
+    }
+
+    public getCurrentSession() {
+        return this.currentSession;
+    }
+
+    public deleteCurrentSession() {
+        this.currentSession = undefined;
+    }
+
+    public existCurrentSession() {
+        if (this.currentSession != undefined) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

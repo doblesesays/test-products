@@ -1,8 +1,13 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="basic">
   <mat-toolbar-row>
     <span [routerLink]="['/']" style="cursor: pointer">Test Products</span>
     <span class="spacer"></span>
-    <mat-icon [routerLink]="['/signin']" class="icon" style="cursor: pointer">account_circle</mat-icon>
+    <button mat-mini-fab *ngIf="!sessions.existCurrentSession()" [routerLink]="['/signin']">
+      <mat-icon style="cursor: pointer">person</mat-icon>
+    </button>
+    <button mat-mini-fab *ngIf="sessions.existCurrentSession()" [routerLink]="['/logout']">
+      <mat-icon style="cursor: pointer">exit_to_app</mat-icon>
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 

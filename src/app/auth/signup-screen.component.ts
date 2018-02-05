@@ -9,6 +9,7 @@ import { User, Sessions } from './user.model';
 export class SignupScreenComponent implements OnInit {
 
   signupForm: FormGroup;
+  success = false;
 
   constructor(private sessions: Sessions) {}
 
@@ -20,10 +21,12 @@ export class SignupScreenComponent implements OnInit {
         Validators.minLength(8)
       ])
     });
+    this.success = false;
   }
 
   onSubmit() {
     if (this.signupForm.valid) {
+      this.success = true;
       const { username, password } = this.signupForm.value;
       const user = new User(username, password);
       this.sessions.addSession(user);

@@ -1,13 +1,9 @@
 <mat-grid-list cols="4" rowHeight="4:4">
-    <mat-grid-tile *ngFor="let product of products">
-        <mat-card>
-            <mat-grid-list cols="2" rowHeight="2:1">
-                <img mat-card-image src="http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-better-than-naked-jacket-AVMH_LC9_hero.png">
-                <div>
-                    <mat-card-title>{{ product.product-name }}</mat-card-title>
-                    <mat-card-subtitle>Category</mat-card-subtitle>
-                </div>
-            </mat-grid-list>
+    <mat-grid-tile *ngFor="let product of products.products">
+        <mat-card style="width:50%">
+                <img mat-card-image style="width:250px" src="{{ product.image }}">
+                <mat-card-subtitle><b>Category: </b> {{ product.category }}</mat-card-subtitle>
+                <mat-card-subtitle><b>Name: </b> {{ product.name }}</mat-card-subtitle>
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>

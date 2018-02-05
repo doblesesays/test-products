@@ -18,6 +18,7 @@ import {SigninScreenComponent} from './auth/signin-screen.component';
 import {SignupScreenComponent} from './auth/signup-screen.component';
 import { ProductsScreenComponent } from "./products/products-screen.component";
 import { Routing } from './app.routing';
+import { LogoutScreenComponent } from './auth/logout-screen.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { Routing } from './app.routing';
     SigninScreenComponent,
     SignupScreenComponent,
     ProductsScreenComponent,
+    LogoutScreenComponent
   ],
   imports: [
     BrowserModule,
